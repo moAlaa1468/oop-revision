@@ -5,19 +5,28 @@
  */
 package amer.alaa.mohamed.package2;
 
+import amer.alaa.mohamed.exceptions.AlaaException;
+
 /**
- *
  * @author moham
  */
-public class Circle {
-   private float radius;
+public class Circle extends Shape {
 
-    public float getRadius() {
-        return radius;
+    public Circle(int radius) throws AlaaException {
+        super(radius);
     }
 
-    public void setRadius(float radius) {
-        this.radius = radius;
+    public float calculateArea() {
+        return getRadius() * getRadius();
     }
-   
+
+    public static void main(String[] args) {
+        try {
+            Circle circle = new Circle(90);
+            double result =circle.calculateArea();
+            System.out.println(result);
+        } catch (AlaaException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 }

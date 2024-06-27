@@ -89,19 +89,35 @@ public class DaysCount {
     }
 
     public static void checkAge(int age) throws AlaaException {
-        if (age < 18) {
+        if (age < 18 && age> 15) {
             throw new AlaaException("Your age must be greater than 18");
-        }
+        }else if (age<15){
+            throw new AlaaException("Your age must be greater than 15");
+        }else
         System.out.println("Age is valid ");
     }
 
-    public static void main(String[] args) {
-        try {
-            checkAge(29);
-        } catch (AlaaException e) {
-            System.err.println("This is caused by Alaa Exception" + e.getMessage());
+//    This is the multiple Catch
+
+    public static void main(String[] args)   {
+        try{
+           int x=10;
+           int result=x/0;
+            System.out.println(result);
+
+            checkAge(0);
+
+        }catch (AlaaException ex ) {    //لافضل انك تروح تعمل من الصغير للكبير
+            System.err.println(ex.getMessage());
+        }catch (RuntimeException ex){   // اول catch مناسبة هينفذها وهيخرج مش هيكمل باقي الكود الموجود عندنا في Try
+            System.err.println(" You have divided vby zero "+ ex.getMessage());
+        }catch (Throwable throwable){   // اي unchecked Exception زي RunTimeException و ال Throwable ينفع انك تعمل بيهم Catch في اي حتة
+            System.out.println(throwable.getMessage());
+            // You could use RunTimeException and Throwable at any time And you don't need to to report them in the function header
+            //unCheck Exceptions
         }
     }
+
 
 
 }
