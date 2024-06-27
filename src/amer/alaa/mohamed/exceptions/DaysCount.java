@@ -107,17 +107,19 @@ public class DaysCount {
 
             checkAge(0);
 
-        }catch (AlaaException ex ) {    //لافضل انك تروح تعمل من الصغير للكبير
+        }catch (AlaaException | NullPointerException | IndexOutOfBoundsException ex  ) {    //لافضل انك تروح تعمل من الصغير للكبير
             System.err.println(ex.getMessage());
-        }catch (RuntimeException ex){   // اول catch مناسبة هينفذها وهيخرج مش هيكمل باقي الكود الموجود عندنا في Try
+        }catch ( RuntimeException  ex){   // اول catch مناسبة هينفذها وهيخرج مش هيكمل باقي الكود الموجود عندنا في Try
             System.err.println(" You have divided vby zero "+ ex.getMessage());
         }catch (Throwable throwable){   // اي unchecked Exception زي RunTimeException و ال Throwable ينفع انك تعمل بيهم Catch في اي حتة
             System.out.println(throwable.getMessage());
             // You could use RunTimeException and Throwable at any time And you don't need to to report them in the function header
             //unCheck Exceptions
+        }finally {
+            System.out.println("This will be implements even if try or catch is executed");
+            System.out.println("Call ended even if the other person responded or not ");
         }
     }
-
 
 
 }
