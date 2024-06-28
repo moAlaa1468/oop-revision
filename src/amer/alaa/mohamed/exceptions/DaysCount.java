@@ -120,6 +120,4 @@ public class DaysCount {
             System.out.println("Call ended even if the other person responded or not ");
         }
     }
-
-
 }
