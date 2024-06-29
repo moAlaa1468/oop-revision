@@ -1,5 +1,7 @@
 package amer.alaa.mohamed.collection;
 
+import java.util.function.Function;
+
 public class SortMethodIdea {
     /*
      * دالة ال sort تستخدم علشان تعدل علي ال object من خلال انك هتباصي ال
@@ -14,6 +16,13 @@ public class SortMethodIdea {
             this.address = address;
         }
 
+        public String getName() {
+            return name;
+        }
+
+        public String getAddress() {
+            return address;
+        }
     }
 
     public static void modifyingObjectValues(Man man, String newName) {
@@ -22,7 +31,7 @@ public class SortMethodIdea {
 
     public static void
     main(String[] args) {
-        Man man = new Man("Mohame Alaa amer ","Cairo , Egypt ");
+        Man man = new Man("Mohamed Alaa amer ","Cairo , Egypt ");
         System.out.println(man.name);
 
         // we will call the ModifyingFunction
