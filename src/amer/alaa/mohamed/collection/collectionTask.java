@@ -59,6 +59,7 @@ public class collectionTask {
     /*
      ==============  Very Important uaAlaa =============
     خلي بالك انت ينفع تخلي الدالة ترجع object ينفع يتشال في reference من نوع ال parent بتاعه
+    function could return object[Like Circle | Triangle] That could be stored in a reference of Parent Type [like Shape]
     * */
 
     //This the most important part
